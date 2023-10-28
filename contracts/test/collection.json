@@ -1,0 +1,10 @@
+{
+  "name": "My Collection",
+  "cardCount": 4,
+  "cards": {
+    "1": "uri://mycard1",
+    "2": "uri://mycard2",
+    "3": "uri://mycard1",
+    "4": "uri://mycard2"
+  }
+}

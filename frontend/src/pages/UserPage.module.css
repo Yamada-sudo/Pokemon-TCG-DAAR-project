@@ -1,0 +1,54 @@
+.userPageContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  .welcomeMessageContainer {
+    background-color: rgba(255, 255, 255, 0.7); /* changé en blanc avec transparence */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 500px; /* bande centrale */
+  }
+  
+  .welcomeButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Vert Pokémon */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Enlève le soulignement pour les liens */
+  }
+  
+  .welcomeButton:hover {
+    background-color: #45a049;
+  }
+  
+  .pokemonCardDisplay {
+    margin-top: 20px;
+    width: 80%;
+    height: 500px; /* ajustez la hauteur comme vous le souhaitez */
+    background-color: rgba(255, 255, 255, 0.8); /* blanc légèrement transparent */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .homeLink {
+    position: absolute; /* Le positionne par rapport à la page */
+    top: 10px;          /* Distance du haut */
+    left: 20px;         /* Distance de gauche */
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none; /* Enlève le soulignement pour les liens */
+}
+
+.homeLink:hover {
+    text-decoration: underline; /* Souligne le texte au survol */
+}

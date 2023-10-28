@@ -9,3 +9,4 @@ cache/
 src/contracts.json
 /deployments/localhost
 /typechain-types
+.env

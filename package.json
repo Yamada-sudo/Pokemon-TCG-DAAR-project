@@ -10,6 +10,10 @@
     "dev": "concurrently -c \"blue.bold,red.bold\" --names \"ethereum,frontend\" \"yarn --cwd contracts dev\" \"yarn --cwd frontend dev\""
   },
   "devDependencies": {
+    "chai": "^4.3.10",
     "concurrently": "^7.5.0"
+  },
+  "dependencies": {
+    "ethers": "^5.0.0"
   }
 }

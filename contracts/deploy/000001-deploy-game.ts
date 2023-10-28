@@ -1,10 +1,21 @@
 import 'dotenv/config'
-import { DeployFunction } from 'hardhat-deploy/types'
+import { HardhatRuntimeEnvironment } from 'hardhat/types';
+import { DeployFunction } from 'hardhat-deploy/types';
 
-const deployer: DeployFunction = async hre => {
-  if (hre.network.config.chainId !== 31337) return
-  const { deployer } = await hre.getNamedAccounts()
-  await hre.deployments.deploy('Main', { from: deployer, log: true })
-}
+const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
+  const { deployments, getNamedAccounts } = hre;
+  const { deploy } = deployments;
+  const { deployer } = await getNamedAccounts();
 
-export default deployer
+  // Déployez Main, qui créera également CardNFT
+  const main = await deploy('Main', {
+    from: deployer,
+    args: [], // Main n'a pas de paramètres pour son constructeur
+    log: true,
+  });
+
+  // À ce stade, CardNFT est déjà déployé par Main, et vous pouvez interagir avec lui via Main.
+};
+
+export default func;
+func.tags = ['DeployAll'];
