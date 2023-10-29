@@ -1,0 +1,13 @@
+{
+  "name": "backend-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "dotenv": "^16.3.1",
+    "ethers": "5",
+    "express": "^4.18.2",
+    "hardhat": "^2.18.3"
+  }
+}

@@ -26,4 +26,9 @@ contract CardNFT is ERC721URIStorage, Ownable {
         _setTokenURI(tokenId, uri);
         return tokenId;
     }
+    
+    function getOwnerOfToken(uint256 tokenId) public view returns (address) {
+    return ownerOf(tokenId);
+}
+
 }

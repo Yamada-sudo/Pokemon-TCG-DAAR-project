@@ -7,13 +7,20 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "yarn --cwd contracts install && yarn --cwd frontend install",
-    "dev": "concurrently -c \"blue.bold,red.bold\" --names \"ethereum,frontend\" \"yarn --cwd contracts dev\" \"yarn --cwd frontend dev\""
+    "ethereum": "yarn --cwd contracts dev",
+    "backend": "wait-on tcp:8545 && node backend-api/server.js",
+    "frontend": "yarn --cwd frontend dev",
+    "dev": "concurrently -c \"blue.bold,red.bold,green.bold\" --names \"ethereum,backend,frontend\" \"npm run ethereum\" \"npm run backend\" \"npm run frontend\""
   },
   "devDependencies": {
     "chai": "^4.3.10",
     "concurrently": "^7.5.0"
   },
   "dependencies": {
-    "ethers": "^5.0.0"
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "ethers": "5",
+    "express": "^4.18.2",
+    "wait-on": "^7.0.1"
   }
 }
