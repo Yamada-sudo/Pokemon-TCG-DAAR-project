@@ -22,9 +22,13 @@ function addCard(address user, uint256 tokenId) external {
     cardCount++;
 }
 
+
 function getUserCards(address user) public view returns (uint256[] memory) {
     return userCards[user];
 }
-
+    function setMaxCardCount(uint256 _newMaxCardCount) external {
+        require(_newMaxCardCount > cardCount, "New max card count should be greater than current card count");
+        maxCardCount = _newMaxCardCount;
+    }
     
 }

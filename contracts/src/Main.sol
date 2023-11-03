@@ -9,7 +9,7 @@ contract Main is Ownable {
     Counters.Counter private _collectionIdCounter;
     CardNFT public cardNFT;
     mapping(uint256 => Collection) public collections;
-
+    mapping(string => uint256) public collectionNameToId;
     event CollectionCreated(uint256 collectionId, address collectionAddress);
 
     constructor() {
@@ -22,14 +22,18 @@ contract Main is Ownable {
         uint256 collectionId = _collectionIdCounter.current();
         Collection newCollection = new Collection(_name, _maxCardCount);
         collections[collectionId] = newCollection;
+
+        // Mettez à jour la cartographie du nom de la collection vers son ID.
+        collectionNameToId[_name] = collectionId;
+
         emit CollectionCreated(collectionId, address(newCollection));
     }
 
-    function mintAndAssignCard(uint256 collectionId, address user, string calldata uri) external onlyOwner {
+    function mintAndAssignCard(uint256 collectionId, address user, string calldata cardIdStr, string calldata uri) external onlyOwner {
         Collection collection = collections[collectionId];
         require(address(collection) != address(0), "Collection does not exist");
 
-        uint256 tokenId = cardNFT.mint(user, uri);
+        uint256 tokenId = cardNFT.mint(user, cardIdStr, uri); // Passer l'ID de la carte en string.
         collection.addCard(user, tokenId);
     }
 
@@ -37,30 +41,14 @@ contract Main is Ownable {
         return address(collections[collectionId]);
     }
 
-    function getAllCollectionIds() public view returns (uint256[] memory) {
-        uint256[] memory ids = new uint256[](_collectionIdCounter.current());
-        for (uint256 i = 1; i <= _collectionIdCounter.current(); i++) {
-           ids[i-1] = i;
-        }
-        return ids;
+    function getCollectionIdByName(string calldata _name) public view returns (uint256) {
+    uint256 collectionId = collectionNameToId[_name];
+    require(collectionId != 0, "Collection with this name does not exist");
+    return collectionId;
     }
 
-    function getCardsOfUserInCollection(address user, uint256 collectionId) public view returns (uint256[] memory) {
-        Collection collection = collections[collectionId];
-        return collection.getUserCards(user);
+    function getCardIdsOfUser(address user) external view returns (string[] memory) {
+    return cardNFT.getCardIdsOf(user);
     }
 
-    function getAllCardsOfUser(address user) public view returns (uint256[][] memory) {
-        uint256[] memory collectionIds = getAllCollectionIds();
-        uint256[][] memory allCards = new uint256[][](collectionIds.length);
-        for (uint256 i = 0; i < collectionIds.length; i++) {
-            allCards[i] = getCardsOfUserInCollection(user, collectionIds[i]);
-        }
-        return allCards;
-    }
-
-    function getCardOfUser(address user, uint256 tokenId) public view returns (uint256) {
-        require(cardNFT.ownerOf(tokenId) == user, "This card doesn't belong to the user");
-        return tokenId;
-    }
 }

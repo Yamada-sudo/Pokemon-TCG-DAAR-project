@@ -1,0 +1,40 @@
+{
+  "id": "sve",
+  "name": "Scarlet & Violet Energies",
+  "cardCount": 0,
+  "maxCardCount": 8,
+  "cards": [
+    {
+      "name": "Basic Water Energy",
+      "image": "https://images.pokemontcg.io/sve/3.png"
+    },
+    {
+      "name": "Basic Grass Energy",
+      "image": "https://images.pokemontcg.io/sve/1.png"
+    },
+    {
+      "name": "Basic Darkness Energy",
+      "image": "https://images.pokemontcg.io/sve/7.png"
+    },
+    {
+      "name": "Basic Lightning Energy",
+      "image": "https://images.pokemontcg.io/sve/4.png"
+    },
+    {
+      "name": "Basic Metal Energy",
+      "image": "https://images.pokemontcg.io/sve/8.png"
+    },
+    {
+      "name": "Basic Fire Energy",
+      "image": "https://images.pokemontcg.io/sve/2.png"
+    },
+    {
+      "name": "Basic Psychic Energy",
+      "image": "https://images.pokemontcg.io/sve/5.png"
+    },
+    {
+      "name": "Basic Fighting Energy",
+      "image": "https://images.pokemontcg.io/sve/6.png"
+    }
+  ]
+}

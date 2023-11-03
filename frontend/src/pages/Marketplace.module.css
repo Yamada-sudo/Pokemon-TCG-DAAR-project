@@ -1,0 +1,72 @@
+body {
+  filter: brightness(110%) saturate(110%);
+}
+.marketplace {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f2f2f2;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.series {
+  margin-bottom: 20px;
+}
+
+.series h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.sets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between; 
+  padding: 0 20px;
+}
+
+.set {
+  flex: 0 0 calc(25% - 20px);
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+}
+
+.set:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+}
+
+.set img {
+  width: 150px;  /* Vous pouvez ajuster cette valeur selon vos besoins */
+  height: 150px;  /* Vous pouvez ajuster cette valeur selon vos besoins */
+  margin-bottom: 10px;
+  border-radius: 5px;
+  object-fit: contain; /* Assurez-vous que l'image s'adapte correctement à la taille spécifiée */
+}
+.set p {
+  font-size: 18px;
+  color: #555;
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.set span {
+  display: block;
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.legals span {
+  background-color: #e1e1e1;
+  padding: 2px 6px;
+  border-radius: 3px;
+  margin-right: 5px;
+  font-size: 12px;
+}

@@ -1,0 +1,31 @@
+.sidebarContainer {
+  display: flex;
+  flex-direction: row;  /* Changez "column" par "row" pour un affichage horizontal */
+  align-items: center;  /* Centrer les éléments verticalement */
+  justify-content: flex-start;  /* Commencez l'affichage à partir de la gauche */
+  padding: 20px;
+  background-color: #FFF;
+  width: 100vw;  /* Largeur complète de l'écran */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.linkContainer {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;  /* Espacement entre les liens */
+}
+
+.icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.linkText {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+}
+
+.linkText:hover {
+  color: #000;
+}

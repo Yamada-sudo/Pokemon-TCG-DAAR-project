@@ -1,0 +1,416 @@
+{
+  "id": "base1",
+  "name": "Base",
+  "cardCount": 0,
+  "maxCardCount": 102,
+  "cards": [
+    {
+      "name": "Alakazam",
+      "image": "https://images.pokemontcg.io/base1/1.png"
+    },
+    {
+      "name": "Blastoise",
+      "image": "https://images.pokemontcg.io/base1/2.png"
+    },
+    {
+      "name": "Chansey",
+      "image": "https://images.pokemontcg.io/base1/3.png"
+    },
+    {
+      "name": "Charizard",
+      "image": "https://images.pokemontcg.io/base1/4.png"
+    },
+    {
+      "name": "Clefairy",
+      "image": "https://images.pokemontcg.io/base1/5.png"
+    },
+    {
+      "name": "Gyarados",
+      "image": "https://images.pokemontcg.io/base1/6.png"
+    },
+    {
+      "name": "Hitmonchan",
+      "image": "https://images.pokemontcg.io/base1/7.png"
+    },
+    {
+      "name": "Machamp",
+      "image": "https://images.pokemontcg.io/base1/8.png"
+    },
+    {
+      "name": "Magneton",
+      "image": "https://images.pokemontcg.io/base1/9.png"
+    },
+    {
+      "name": "Mewtwo",
+      "image": "https://images.pokemontcg.io/base1/10.png"
+    },
+    {
+      "name": "Nidoking",
+      "image": "https://images.pokemontcg.io/base1/11.png"
+    },
+    {
+      "name": "Ninetales",
+      "image": "https://images.pokemontcg.io/base1/12.png"
+    },
+    {
+      "name": "Poliwrath",
+      "image": "https://images.pokemontcg.io/base1/13.png"
+    },
+    {
+      "name": "Raichu",
+      "image": "https://images.pokemontcg.io/base1/14.png"
+    },
+    {
+      "name": "Venusaur",
+      "image": "https://images.pokemontcg.io/base1/15.png"
+    },
+    {
+      "name": "Zapdos",
+      "image": "https://images.pokemontcg.io/base1/16.png"
+    },
+    {
+      "name": "Beedrill",
+      "image": "https://images.pokemontcg.io/base1/17.png"
+    },
+    {
+      "name": "Dragonair",
+      "image": "https://images.pokemontcg.io/base1/18.png"
+    },
+    {
+      "name": "Dugtrio",
+      "image": "https://images.pokemontcg.io/base1/19.png"
+    },
+    {
+      "name": "Electabuzz",
+      "image": "https://images.pokemontcg.io/base1/20.png"
+    },
+    {
+      "name": "Electrode",
+      "image": "https://images.pokemontcg.io/base1/21.png"
+    },
+    {
+      "name": "Pidgeotto",
+      "image": "https://images.pokemontcg.io/base1/22.png"
+    },
+    {
+      "name": "Arcanine",
+      "image": "https://images.pokemontcg.io/base1/23.png"
+    },
+    {
+      "name": "Charmeleon",
+      "image": "https://images.pokemontcg.io/base1/24.png"
+    },
+    {
+      "name": "Dewgong",
+      "image": "https://images.pokemontcg.io/base1/25.png"
+    },
+    {
+      "name": "Dratini",
+      "image": "https://images.pokemontcg.io/base1/26.png"
+    },
+    {
+      "name": "Farfetch'd",
+      "image": "https://images.pokemontcg.io/base1/27.png"
+    },
+    {
+      "name": "Growlithe",
+      "image": "https://images.pokemontcg.io/base1/28.png"
+    },
+    {
+      "name": "Haunter",
+      "image": "https://images.pokemontcg.io/base1/29.png"
+    },
+    {
+      "name": "Ivysaur",
+      "image": "https://images.pokemontcg.io/base1/30.png"
+    },
+    {
+      "name": "Jynx",
+      "image": "https://images.pokemontcg.io/base1/31.png"
+    },
+    {
+      "name": "Kadabra",
+      "image": "https://images.pokemontcg.io/base1/32.png"
+    },
+    {
+      "name": "Kakuna",
+      "image": "https://images.pokemontcg.io/base1/33.png"
+    },
+    {
+      "name": "Machoke",
+      "image": "https://images.pokemontcg.io/base1/34.png"
+    },
+    {
+      "name": "Magikarp",
+      "image": "https://images.pokemontcg.io/base1/35.png"
+    },
+    {
+      "name": "Magmar",
+      "image": "https://images.pokemontcg.io/base1/36.png"
+    },
+    {
+      "name": "Nidorino",
+      "image": "https://images.pokemontcg.io/base1/37.png"
+    },
+    {
+      "name": "Poliwhirl",
+      "image": "https://images.pokemontcg.io/base1/38.png"
+    },
+    {
+      "name": "Porygon",
+      "image": "https://images.pokemontcg.io/base1/39.png"
+    },
+    {
+      "name": "Raticate",
+      "image": "https://images.pokemontcg.io/base1/40.png"
+    },
+    {
+      "name": "Seel",
+      "image": "https://images.pokemontcg.io/base1/41.png"
+    },
+    {
+      "name": "Wartortle",
+      "image": "https://images.pokemontcg.io/base1/42.png"
+    },
+    {
+      "name": "Abra",
+      "image": "https://images.pokemontcg.io/base1/43.png"
+    },
+    {
+      "name": "Bulbasaur",
+      "image": "https://images.pokemontcg.io/base1/44.png"
+    },
+    {
+      "name": "Caterpie",
+      "image": "https://images.pokemontcg.io/base1/45.png"
+    },
+    {
+      "name": "Charmander",
+      "image": "https://images.pokemontcg.io/base1/46.png"
+    },
+    {
+      "name": "Diglett",
+      "image": "https://images.pokemontcg.io/base1/47.png"
+    },
+    {
+      "name": "Doduo",
+      "image": "https://images.pokemontcg.io/base1/48.png"
+    },
+    {
+      "name": "Drowzee",
+      "image": "https://images.pokemontcg.io/base1/49.png"
+    },
+    {
+      "name": "Gastly",
+      "image": "https://images.pokemontcg.io/base1/50.png"
+    },
+    {
+      "name": "Koffing",
+      "image": "https://images.pokemontcg.io/base1/51.png"
+    },
+    {
+      "name": "Machop",
+      "image": "https://images.pokemontcg.io/base1/52.png"
+    },
+    {
+      "name": "Magnemite",
+      "image": "https://images.pokemontcg.io/base1/53.png"
+    },
+    {
+      "name": "Metapod",
+      "image": "https://images.pokemontcg.io/base1/54.png"
+    },
+    {
+      "name": "Nidoran ♂",
+      "image": "https://images.pokemontcg.io/base1/55.png"
+    },
+    {
+      "name": "Onix",
+      "image": "https://images.pokemontcg.io/base1/56.png"
+    },
+    {
+      "name": "Pidgey",
+      "image": "https://images.pokemontcg.io/base1/57.png"
+    },
+    {
+      "name": "Pikachu",
+      "image": "https://images.pokemontcg.io/base1/58.png"
+    },
+    {
+      "name": "Poliwag",
+      "image": "https://images.pokemontcg.io/base1/59.png"
+    },
+    {
+      "name": "Ponyta",
+      "image": "https://images.pokemontcg.io/base1/60.png"
+    },
+    {
+      "name": "Rattata",
+      "image": "https://images.pokemontcg.io/base1/61.png"
+    },
+    {
+      "name": "Sandshrew",
+      "image": "https://images.pokemontcg.io/base1/62.png"
+    },
+    {
+      "name": "Squirtle",
+      "image": "https://images.pokemontcg.io/base1/63.png"
+    },
+    {
+      "name": "Starmie",
+      "image": "https://images.pokemontcg.io/base1/64.png"
+    },
+    {
+      "name": "Staryu",
+      "image": "https://images.pokemontcg.io/base1/65.png"
+    },
+    {
+      "name": "Tangela",
+      "image": "https://images.pokemontcg.io/base1/66.png"
+    },
+    {
+      "name": "Voltorb",
+      "image": "https://images.pokemontcg.io/base1/67.png"
+    },
+    {
+      "name": "Vulpix",
+      "image": "https://images.pokemontcg.io/base1/68.png"
+    },
+    {
+      "name": "Weedle",
+      "image": "https://images.pokemontcg.io/base1/69.png"
+    },
+    {
+      "name": "Clefairy Doll",
+      "image": "https://images.pokemontcg.io/base1/70.png"
+    },
+    {
+      "name": "Computer Search",
+      "image": "https://images.pokemontcg.io/base1/71.png"
+    },
+    {
+      "name": "Devolution Spray",
+      "image": "https://images.pokemontcg.io/base1/72.png"
+    },
+    {
+      "name": "Impostor Professor Oak",
+      "image": "https://images.pokemontcg.io/base1/73.png"
+    },
+    {
+      "name": "Item Finder",
+      "image": "https://images.pokemontcg.io/base1/74.png"
+    },
+    {
+      "name": "Lass",
+      "image": "https://images.pokemontcg.io/base1/75.png"
+    },
+    {
+      "name": "Pokémon Breeder",
+      "image": "https://images.pokemontcg.io/base1/76.png"
+    },
+    {
+      "name": "Pokémon Trader",
+      "image": "https://images.pokemontcg.io/base1/77.png"
+    },
+    {
+      "name": "Scoop Up",
+      "image": "https://images.pokemontcg.io/base1/78.png"
+    },
+    {
+      "name": "Super Energy Removal",
+      "image": "https://images.pokemontcg.io/base1/79.png"
+    },
+    {
+      "name": "Defender",
+      "image": "https://images.pokemontcg.io/base1/80.png"
+    },
+    {
+      "name": "Energy Retrieval",
+      "image": "https://images.pokemontcg.io/base1/81.png"
+    },
+    {
+      "name": "Full Heal",
+      "image": "https://images.pokemontcg.io/base1/82.png"
+    },
+    {
+      "name": "Maintenance",
+      "image": "https://images.pokemontcg.io/base1/83.png"
+    },
+    {
+      "name": "PlusPower",
+      "image": "https://images.pokemontcg.io/base1/84.png"
+    },
+    {
+      "name": "Pokémon Center",
+      "image": "https://images.pokemontcg.io/base1/85.png"
+    },
+    {
+      "name": "Pokémon Flute",
+      "image": "https://images.pokemontcg.io/base1/86.png"
+    },
+    {
+      "name": "Pokédex",
+      "image": "https://images.pokemontcg.io/base1/87.png"
+    },
+    {
+      "name": "Professor Oak",
+      "image": "https://images.pokemontcg.io/base1/88.png"
+    },
+    {
+      "name": "Revive",
+      "image": "https://images.pokemontcg.io/base1/89.png"
+    },
+    {
+      "name": "Super Potion",
+      "image": "https://images.pokemontcg.io/base1/90.png"
+    },
+    {
+      "name": "Bill",
+      "image": "https://images.pokemontcg.io/base1/91.png"
+    },
+    {
+      "name": "Energy Removal",
+      "image": "https://images.pokemontcg.io/base1/92.png"
+    },
+    {
+      "name": "Gust of Wind",
+      "image": "https://images.pokemontcg.io/base1/93.png"
+    },
+    {
+      "name": "Potion",
+      "image": "https://images.pokemontcg.io/base1/94.png"
+    },
+    {
+      "name": "Switch",
+      "image": "https://images.pokemontcg.io/base1/95.png"
+    },
+    {
+      "name": "Double Colorless Energy",
+      "image": "https://images.pokemontcg.io/base1/96.png"
+    },
+    {
+      "name": "Fighting Energy",
+      "image": "https://images.pokemontcg.io/base1/97.png"
+    },
+    {
+      "name": "Fire Energy",
+      "image": "https://images.pokemontcg.io/base1/98.png"
+    },
+    {
+      "name": "Grass Energy",
+      "image": "https://images.pokemontcg.io/base1/99.png"
+    },
+    {
+      "name": "Lightning Energy",
+      "image": "https://images.pokemontcg.io/base1/100.png"
+    },
+    {
+      "name": "Psychic Energy",
+      "image": "https://images.pokemontcg.io/base1/101.png"
+    },
+    {
+      "name": "Water Energy",
+      "image": "https://images.pokemontcg.io/base1/102.png"
+    }
+  ]
+}

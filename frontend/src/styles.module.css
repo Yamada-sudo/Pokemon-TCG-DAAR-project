@@ -3,17 +3,12 @@ body {
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  filter: brightness(110%) saturate(110%);
   margin: 0;
-  font-family: 'Arial', sans-serif; /* Vous pouvez choisir la police que vous préférez */
+  font-family: 'Arial', sans-serif;
 }
 
 .card-element {
   box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
-}
-
-body:hover {
-  filter: brightness(130%) saturate(110%);
 }
 
 .parallax-container {
@@ -38,18 +33,18 @@ body:hover {
   align-items: center;
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.7);
-  text-align: center; /* Centre le texte */
+  text-align: center;
 }
 
 .loginButton {
   padding: 12px 24px;
-  margin-top: 15px; /* Ajoutez une petite marge en haut */
+  margin-top: 15px;
   background-color: #fddb3a;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-weight: bold; /* Texte en gras */
+  font-weight: bold;
 }
 
 .loginButton:hover {
@@ -58,10 +53,11 @@ body:hover {
 
 .welcomeMessage {
   margin-bottom: 20px;
-  font-size: 32px; /* Augmente la taille du texte */
+  font-size: 32px;
   font-weight: bold;
-  color: #333; /* Couleur de texte foncée */
+  color: #333;
 }
+
 .userPageContainer {
   display: flex;
   justify-content: center;
