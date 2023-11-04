@@ -1,6 +1,7 @@
 const express = require('express');
 const { ethers } = require('ethers');
 require('dotenv').config();
+const fs = require('fs');
 const axios = require('axios');
 const cors = require('cors'); 
 
@@ -107,6 +108,8 @@ let wallet;
             }
         });
 
+
+        // Récupérer tous les NFT d'un utilisateur spécifique
         app.get('/nfts/:address', async (req, res, next) => {
             const userAddress = req.params.address;
             try {
@@ -128,6 +131,61 @@ let wallet;
             }
         });
         
+        // Helper function to check file age
+function isFileFresh(filePath) {
+    const stats = fs.statSync(filePath);
+    const fileAgeMs = Date.now() - stats.mtimeMs;
+    return fileAgeMs < 24 * 60 * 60 * 1000; // 24 hours
+}
+
+// Helper function to write to JSON file
+function writeCardsToFile(cards) {
+    const dataToWrite = JSON.stringify({ lastUpdated: new Date().toISOString(), cards });
+    fs.writeFileSync(CARDS_FILE_PATH, dataToWrite);
+}
+const CARDS_FILE_PATH = '.selectedCards.json';
+app.get('/pokemon/boosters/random-cards', async (req, res) => {
+    // Check if the file exists and is fresh
+    if (fs.existsSync(CARDS_FILE_PATH) && isFileFresh(CARDS_FILE_PATH)) {
+        const fileContents = fs.readFileSync(CARDS_FILE_PATH);
+        return res.json(JSON.parse(fileContents).cards);
+    }
+
+    // If no fresh file, generate new card set
+    try {
+        const setsResponse = await axios.get(`${POKEMON_TCG_API_BASE_URL}/sets`);
+        const sets = setsResponse.data.data;
+        let selectedCards = [];
+        let attempts = 0;
+
+        while (selectedCards.length < 16 && attempts < sets.length) {
+            const randomSetIndex = Math.floor(Math.random() * sets.length);
+            const setId = sets[randomSetIndex].id;
+            const cardsResponse = await axios.get(`${POKEMON_TCG_API_BASE_URL}/cards`, { params: { q: `set.id:${setId}` } });
+            const cards = cardsResponse.data.data;
+
+            if (cards.length > 0) {
+                const randomCardIndex = Math.floor(Math.random() * cards.length);
+                selectedCards.push({
+                    setId: setId,
+                    cardId: cards[randomCardIndex].id
+                });
+            }
+
+            attempts++;
+        }
+
+        // Remove duplicates
+        selectedCards = [...new Map(selectedCards.map(card => [card['setId'], card])).values()];
+
+        // Write to JSON file
+        writeCardsToFile(selectedCards);
+
+        res.json(selectedCards);
+    } catch (error) {
+        res.status(500).send('Error fetching data');
+    }
+    });
 
         // Récupérer tous les NFT d'une collection pour un utilisateur
         app.get('/nfts/:address/collection/:collectionId', async (req, res, next) => {

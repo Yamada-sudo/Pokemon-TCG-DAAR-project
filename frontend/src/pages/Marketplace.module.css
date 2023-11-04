@@ -1,6 +1,7 @@
 body {
   filter: brightness(110%) saturate(110%);
 }
+
 .marketplace {
   font-family: Arial, sans-serif;
   padding: 20px;
@@ -23,7 +24,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: space-between; 
+  justify-content: space-between;
   padding: 0 20px;
 }
 
@@ -32,41 +33,62 @@ body {
   background-color: #fff;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .set:hover {
   transform: translateY(-10px);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .set img {
-  width: 150px;  /* Vous pouvez ajuster cette valeur selon vos besoins */
-  height: 150px;  /* Vous pouvez ajuster cette valeur selon vos besoins */
+  width: 150px;
+  height: 150px;
   margin-bottom: 10px;
   border-radius: 5px;
-  object-fit: contain; /* Assurez-vous que l'image s'adapte correctement à la taille spécifiée */
+  object-fit: contain;
 }
+
 .set p {
   font-size: 18px;
   color: #555;
-  margin: 0;
-  margin-bottom: 8px;
-}
-
-.set span {
-  display: block;
-  color: #777;
-  font-size: 14px;
   margin-bottom: 5px;
 }
 
-.legals span {
-  background-color: #e1e1e1;
-  padding: 2px 6px;
-  border-radius: 3px;
-  margin-right: 5px;
-  font-size: 12px;
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.card {
+  flex: 0 0 calc(25% - 20px);
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.card p {
+  font-size: 16px;
+  color: #555;
+}
+
+.legals {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #888;
 }
