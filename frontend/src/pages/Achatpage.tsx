@@ -24,6 +24,7 @@ export const Achat: React.FC = () => {
   const handleConfirmClick = async () => {
     if (parseFloat(balance) < parseFloat(priceInEuros)) {
       console.log("Balance too low.");
+      console.log('user : ', userAddress);
       return;
     }
 
@@ -52,8 +53,8 @@ export const Achat: React.FC = () => {
   return (
     <div className={styles.achatOverlay}>
       <div className={styles.achatContainer}>
-        <button className={styles.closeButton} onClick={handleCloseClick}>X</button>
         <div className={styles.cardContainer}>
+        <button className={styles.closeButton} onClick={handleCloseClick}>X</button>
           <img src={card.images.small} alt={card.name} />
           <div className={styles.cardDetails}>
             <p>Price: €{priceInEuros}</p>
