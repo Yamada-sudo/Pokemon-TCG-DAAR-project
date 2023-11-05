@@ -260,7 +260,27 @@ app.get('/mint-nft/:userAddress/:setId/:cardId', async (req, res, next) => {
         res.status(500).send("An error occurred while processing your request");
     }   
 });
-
+/*
+// Route pour transférer une carte NFT d'un utilisateur à un autre
+app.post('/transfer-nft/:oldOwnerAddress/:newOwnerAddress/:setId/:cardId/:setName', async (req, res) => {
+    const { oldOwnerAddress, newOwnerAddress, setId, cardId, setName } = req.params;
+  
+    try {
+      // Obtenir l'ID de la collection par le nom du set
+      const collectionId = await contract.getCollectionIdByName(setName);
+  
+      // Supprimer la carte de la collection de l'ancien propriétaire
+      await contract.removeCardFromUserCollection(collectionId, oldOwnerAddress, cardId);
+  
+      // Mint la carte pour le nouveau propriétaire
+      await contract.mintCardToUser(newOwnerAddress, setId, cardId);
+  
+      res.send(`La carte avec l'ID ${cardId} a été transférée et mintée pour le nouveau propriétaire avec l'adresse ${newOwnerAddress}.`);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Une erreur est survenue lors du transfert de la carte NFT.");
+    }
+  });*/
 
         // Récupérer tous les NFT d'une collection pour un utilisateur
         app.get('/nfts/:address/collection/:collectionId', async (req, res, next) => {

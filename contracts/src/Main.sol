@@ -50,4 +50,16 @@ contract Main is Ownable {
     return cardNFT.getCardIdsOf(user);
     }
 
+    // Fonction pour retirer une carte de la collection d'un utilisateur
+    //function removeCardFromUserCollection(uint256 _collectionId, address _user, uint256 _cardId) external onlyOwner {
+    //    Collection collection = collections[_collectionId];
+    //    require(address(collection) != address(0), "Collection does not exist");
+        
+        // Vérifier si l'utilisateur possède la carte.
+    //    require(cardNFT.getOwnerOfToken(_cardId) == _user, "User does not own the card");
+
+        // Retirer la carte de la collection.
+    //    collection.removeCard(_user, _cardId);
+    //}
+
 }

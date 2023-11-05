@@ -31,4 +31,45 @@ function getUserCards(address user) public view returns (uint256[] memory) {
         maxCardCount = _newMaxCardCount;
     }
     
+    /*
+        // Fonction pour retirer une carte de l'utilisateur
+    function removeCard(address user, uint256 tokenId) external {
+        require(cards[tokenId], "Card does not exist in collection");
+        require(isCardOwnedByUser(user, tokenId), "User does not own this card");
+
+        // Retirer la carte de l'utilisateur
+        uint256 cardIndex = findCardIndex(userCards[user], tokenId);
+        require(cardIndex < userCards[user].length, "Card index out of bounds");
+
+        // Supprimer la carte en remplaçant l'élément à supprimer par le dernier élément du tableau
+        userCards[user][cardIndex] = userCards[user][userCards[user].length - 1];
+        userCards[user].pop();
+
+        // Mettre à jour l'état des cartes
+        cards[tokenId] = false;
+        cardCount--;
+    }
+
+    // Fonction helper pour trouver l'index de la carte dans le tableau de l'utilisateur
+    function findCardIndex(uint256[] storage cardArray, uint256 tokenId) private view returns (uint256) {
+        for (uint256 i = 0; i < cardArray.length; i++) {
+            if (cardArray[i] == tokenId) {
+                return i;
+            }
+        }
+        revert("Card not found");
+    }
+
+    // Fonction helper pour vérifier si l'utilisateur possède la carte
+    function isCardOwnedByUser(address user, uint256 tokenId) private view returns (bool) {
+        uint256[] memory userCardArray = userCards[user];
+        for (uint256 i = 0; i < userCardArray.length; i++) {
+            if (userCardArray[i] == tokenId) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    */
 }
