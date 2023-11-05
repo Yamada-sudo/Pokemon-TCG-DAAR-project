@@ -2,8 +2,8 @@
   "name": "collectible-card-game-daar",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:ghivert/touche-coule.git",
-  "author": "Guillaume Hivert <hivert.is.coming@gmail.com>",
+  "repository": "https://github.com/Yamada-sudo/Pokemon-TCG-DAAR-project.git",
+  "author": "Rayene GUIASSA <rayeneguiassa@gmail.com>",
   "license": "MIT",
   "scripts": {
     "postinstall": "yarn --cwd contracts install && yarn --cwd frontend install",
