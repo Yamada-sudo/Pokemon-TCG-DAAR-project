@@ -92,3 +92,13 @@ body {
   font-size: 14px;
   color: #888;
 }
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1rem;
+}

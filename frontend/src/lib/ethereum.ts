@@ -66,3 +66,14 @@ export const chainChanged = (callback: (accounts: string[]) => void) => {
     return () => {}
   }
 }
+
+export const getBalance = async (address: string): Promise<string> => {
+  const ethereum = (window as any).ethereum;
+  if (!ethereum) {
+    throw new Error("Ethereum object doesn't exist!");
+  }
+  const provider = new ethers.providers.Web3Provider(ethereum);
+  const balance = await provider.getBalance(address);
+  return ethers.utils.formatEther(balance);
+};
+

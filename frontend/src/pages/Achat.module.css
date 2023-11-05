@@ -1,0 +1,47 @@
+.achatContainer {
+  width: 100%; 
+  max-width: 1000px; 
+  margin: 20px auto;
+  padding: 20px; 
+  background-color: #fff; 
+  border-radius: 10px; 
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+  }
+  
+  .cardContainer {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .cardDetails {
+    margin-top: 20px;
+  }
+  
+  .confirmButton {
+    background-color: #ffcb05;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .confirmButton:hover {
+    background-color: #ffd700;
+  }
+  .closeButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }

@@ -58,6 +58,23 @@ let wallet;
             }
         });
 
+// Route pour obtenir les détails d'un set spécifique
+app.get('/sets/:setId', async (req, res) => {
+    const setId = req.params.setId;
+  
+    try {
+      // Appel API pour obtenir les détails du set
+      const response = await axios.get(`${POKEMON_TCG_API_BASE_URL}/sets/${setId}`);
+      
+      // Envoyer la réponse de l'API au client
+      res.json(response.data);
+    } catch (error) {
+      // Gérer les erreurs potentielles, comme un set ID non valide ou des problèmes de réseau
+      console.error(error);
+      res.status(500).send("Une erreur est survenue lors de la récupération des informations du set.");
+    }
+  });
+
         // Récupérer une carte spécifique d'un set
         app.get('/pokemon/sets/:setId/cards/:cardId', async (req, res, next) => {
             const { setId, cardId } = req.params;
@@ -108,8 +125,6 @@ let wallet;
             }
         });
 
-
-        // Récupérer tous les NFT d'un utilisateur spécifique
         app.get('/nfts/:address', async (req, res, next) => {
             const userAddress = req.params.address;
             try {
@@ -122,14 +137,23 @@ let wallet;
                     return response.data.data;
                 });
         
-                const cardDetails = await Promise.all(cardDetailsPromises);
-        
+                let cardDetails = await Promise.all(cardDetailsPromises);
+                
+                // Filtrer les doublons en gardant une seule occurrence de chaque nom de carte
+                const seenNames = new Set();
+                cardDetails = cardDetails.filter(card => {
+                    const duplicate = seenNames.has(card.name);
+                    seenNames.add(card.name);
+                    return !duplicate;
+                });
+                
                 // Retournez les informations en tant que réponse JSON
                 res.json(cardDetails);
             } catch (error) {
                 next(error);
             }
         });
+        
         
         // Helper function to check file age
 function isFileFresh(filePath) {
@@ -186,6 +210,56 @@ app.get('/pokemon/boosters/random-cards', async (req, res) => {
         res.status(500).send('Error fetching data');
     }
     });
+
+
+// Route pour mint une NFT basée sur l'ID de set et l'ID de carte
+app.get('/mint-nft/:userAddress/:setId/:cardId', async (req, res, next) => {
+    const { userAddress, setId, cardId } = req.params;
+
+    try {
+        // Récupérer les informations du set
+        const setResponse = await axios.get(`${POKEMON_TCG_API_BASE_URL}/sets/${setId}`);
+        const set = setResponse.data.data;
+        let collectionId;
+        
+        // Essayer de récupérer l'ID de la collection par son nom
+        collectionId = await contract.getCollectionIdByName(set.name);
+        console.log('colleciton id : ',collectionId.eq(0));
+        // Si la collection n'existe pas, la créer
+        if (collectionId.eq(0)) {
+            console.log('colleciton id 000 ', set.name,' total ',set.total);
+            await contract.createCollection(set.name, set.total);
+            console.log(' le set : ',set.name)
+            // Attendre et vérifier si la collection a bien été créée
+            let attempts = 0;
+            while (collectionId.eq(0) && attempts < 10) {
+                await new Promise(resolve => setTimeout(resolve, 2000)); // Attendre 2 secondes avant de réessayer
+                collectionId = await contract.getCollectionIdByName(set.name);
+                attempts++;
+            }
+
+            if (collectionId.eq(0)) {
+                return res.status(400).send("Failed to create collection after multiple attempts");
+            }
+        }
+        console.log('creation faite')
+        // Vérifier si la carte existe dans le set
+        const cardResponse = await axios.get(`${POKEMON_TCG_API_BASE_URL}/cards/${cardId}`);
+        const card = cardResponse.data.data;
+
+        if (card.set.id === setId) {
+            // Interagir avec le contrat intelligent pour mint la carte à l'utilisateur
+            const tx = await contract.mintAndAssignCard(collectionId, userAddress, card.id, card.images.small);
+            await tx.wait(); // Attendre que la transaction soit confirmée
+            res.send('OK');
+        } else {
+            res.status(404).send("Card not found in the specified set");
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("An error occurred while processing your request");
+    }   
+});
 
         // Récupérer tous les NFT d'une collection pour un utilisateur
         app.get('/nfts/:address/collection/:collectionId', async (req, res, next) => {

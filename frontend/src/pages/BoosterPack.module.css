@@ -85,7 +85,7 @@
 }
 
 .buyButton:hover {
-  background-color: #fcd200; /* A brighter yellow */
+  background-color: #fcd200; 
 }
 
 .closeButton {
@@ -98,13 +98,12 @@
   font-size: 1rem;
 }
 
-/* Additional container for card details */
 .cardDetailsContainer {
-  width: 100%; /* Take the full width of the parent */
-  max-width: 1000px; /* Maximum width */
-  margin: 20px auto; /* Centering */
-  padding: 20px; /* Padding around the content */
-  background-color: #fff; /* White background for clarity */
-  border-radius: 10px; /* Rounded corners for the container */
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3); /* Shadow for depth */
+  width: 100%;
+  max-width: 1000px; 
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff; 
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
 }

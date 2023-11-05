@@ -1,18 +1,18 @@
 .sidebarContainer {
   display: flex;
-  flex-direction: row;  /* Changez "column" par "row" pour un affichage horizontal */
-  align-items: center;  /* Centrer les éléments verticalement */
-  justify-content: flex-start;  /* Commencez l'affichage à partir de la gauche */
+  flex-direction: row;  
+  align-items: center; 
+  justify-content: flex-start;
   padding: 20px;
   background-color: #FFF;
-  width: 100vw;  /* Largeur complète de l'écran */
+  width: 100vw; 
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .linkContainer {
   display: flex;
   align-items: center;
-  margin-right: 40px;  /* Espacement entre les liens */
+  margin-right: 40px; 
 }
 
 .icon {

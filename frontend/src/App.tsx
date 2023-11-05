@@ -10,6 +10,8 @@ import { Sidebar } from './pages/Sidebar';
 import { HomePage } from './pages/HomePage';
 import { Marketplace } from './pages/Marketplace';
 import { BoosterPack } from './pages/BoosterPack';
+import { Achat } from './pages/Achatpage';
+
 
 export const App = () => {
   return (
@@ -24,6 +26,7 @@ export const App = () => {
             <Route path="/Home" element={<HomePage />} />
             <Route path="/Marketplace" element={<Marketplace />} />
             <Route path="/Boosters" element={<BoosterPack />} />
+            <Route path="/Achat" element={<Achat />} />
             <Route path="*" element={<Navigate to="/Login" />} />
           </Routes>
         </div>

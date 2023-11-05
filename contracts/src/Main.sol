@@ -43,7 +43,6 @@ contract Main is Ownable {
 
     function getCollectionIdByName(string calldata _name) public view returns (uint256) {
     uint256 collectionId = collectionNameToId[_name];
-    require(collectionId != 0, "Collection with this name does not exist");
     return collectionId;
     }
 

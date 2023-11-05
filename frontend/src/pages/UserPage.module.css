@@ -1,29 +1,50 @@
 .userPageContainer {
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Column direction to align filter bar on top */
   align-items: center;
-  height: 100vh;
+  padding-top: 20px;
+}
 
-  /* Modification du fond pour un blanc semi-transparent à 80% */
-  background-color: rgba(255, 255, 255, 0.7);
+.filterBar {
+  width: 100%;
+  max-width: 1200px; /* Same max-width as cardsContainer */
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+.filterBar button {
+  margin: 0 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filterBar button:focus,
+.filterBar button:hover {
+  background-color: #e0e0e0;
 }
 
 .cardsContainer {
   display: flex;
-  overflow-x: auto;
+  flex-wrap: wrap; /* Wrap items to form multiple lines */
+  justify-content: center;
   gap: 10px;
   padding: 20px;
   width: 100%;
   max-width: 1200px;
-
-  /* Pour donner un meilleur contraste entre les cartes et le fond semi-transparent */
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
 }
 
 .singleCard {
-  flex: 0 0 auto;
+  flex: 0 0 calc(25% - 10px); /* Adjust the width for 4 items per row minus the gap */
   padding: 10px;
   background-color: #fff;
   border-radius: 10px;
@@ -32,7 +53,7 @@
   flex-direction: column;
   align-items: center;
   gap: 5px;
-  width: 140px;
+  margin-bottom: 10px; /* Add bottom margin for spacing between rows */
 }
 
 .cardImage {

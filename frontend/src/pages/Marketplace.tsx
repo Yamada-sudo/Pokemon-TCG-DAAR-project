@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Marketplace.module.css';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 interface Set {
@@ -37,6 +38,9 @@ interface CardDetail {
     };
     tcgplayer: {
       prices: {
+        normal: {
+            mid: number;
+          };
         holofoil: {
           mid: number;
         };
@@ -49,6 +53,9 @@ export const Marketplace: React.FC = () => {
     const [cards, setCards] = useState<Card[]>([]);
     const [selectedSet, setSelectedSet] = useState<Set | null>(null);
     const [selectedCard, setSelectedCard] = useState<CardDetail | null>(null);
+    const [cardClickCount, setCardClickCount] = useState(0);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -56,7 +63,7 @@ export const Marketplace: React.FC = () => {
                 const response = await axios.get('http://localhost:3000/pokemon/sets');
                 setSets(response.data);
             } catch (error) {
-                console.error('Error fetching data:', error);
+                console.error('Loading ... data:', error);
             }
         };
         fetchData();
@@ -69,7 +76,7 @@ export const Marketplace: React.FC = () => {
             const matchingSet = sets.find(s => s.id === setId);
             setSelectedSet(matchingSet || null);
         } catch (error) {
-            console.error('Error fetching cards:', error);
+            console.error('Loading ... cards:', error);
         }
     };
 
@@ -78,7 +85,7 @@ export const Marketplace: React.FC = () => {
           const response = await axios.get(`http://localhost:3000/pokemon/sets/${setId}/cards/${cardId}`);
           setSelectedCard(response.data);
         } catch (error) {
-          console.error('Error fetching card details:', error);
+          console.error('Loading ... card details:', error);
         }
       }
 
@@ -89,11 +96,18 @@ export const Marketplace: React.FC = () => {
         acc[set.series].push(set);
         return acc;
     }, {});
+    const onClose = () => {
+        setSelectedCard(null); // Pour fermer la vue de détail
+    };
 
+    const onBuy = (priceInEuros: number, cardId: string, setId: string) => {
+        navigate('/Achat', { state: { priceInEuros, cardId, setId } });
+    };
     return (
         <div className={styles.marketplace}>
             {selectedCard ? (
                 <div>
+                    <button className={styles.closeButton} onClick={onClose}>X</button>
                     <img src={selectedCard.images.small} alt={selectedCard.name} />
                     <div>
                         <h2>{selectedCard.name}</h2>
@@ -105,7 +119,13 @@ export const Marketplace: React.FC = () => {
                             <p>{ability.text}</p>
                         </div>
                         ))}
-                        <p>Sell Price: {selectedCard.tcgplayer.prices.holofoil.mid} $</p>
+                      <p>Sell Price: {(selectedCard.tcgplayer.prices.holofoil || selectedCard.tcgplayer.prices.normal)?.mid || 100.99} €</p>
+                        <button
+                            disabled={cardClickCount % 3 === 2}
+                            onClick={() => onBuy((selectedCard.tcgplayer.prices.holofoil || selectedCard.tcgplayer.prices.normal)?.mid || 100.99, selectedCard.id, selectedSet?.id || '')}
+                        >
+                            {cardClickCount % 3 === 2 ? 'En rupture de stock' : 'Acheter'}
+                        </button>
                     </div>
                 </div>
             ) : selectedSet ? (
