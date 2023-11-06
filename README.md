@@ -57,6 +57,14 @@ Développement réussi d'une interface interactive pour la gestion et l'affichag
 Maîtrise de React.js pour le frontend et intégration poussée avec les contrats intelligents pour la sécurité et la fluidité de l'expérience utilisateur.
 Résolution de défis techniques renforçant les compétences de développement et la méthode de programmation.
 Plans futurs pour élargir les fonctionnalités avec la revente de cartes, les duels, et les échanges, visant à simuler plus précisément l'expérience Pokémon TCG et à dynamiser l'engagement des utilisateurs.
+
+## Démarrage de l'Application
+
+Pour lancer l'application, exécutez la commande suivante :
+
+```bash
+yarn dev 
+
 # Project Summary
 
 ## Introduction
@@ -117,3 +125,11 @@ Successfully implemented an interactive interface for managing and displaying Po
 Advanced proficiency in React.js for the frontend and intricate integration with smart contracts for secure and seamless user experience.
 Technical challenges overcome with innovative solutions, enhancing development skills and refining programming approaches.
 Future plans include adding features for users to resell cards, duel, and trade, aiming to more accurately emulate the Pokémon TCG experience and boost user engagement.
+
+## Starting the Application
+
+To start the application, run the following command:
+
+```bash
+yarn dev 
+
