@@ -64,7 +64,7 @@ Pour lancer l'application, exécutez la commande suivante :
 
 ```bash
 yarn dev 
-
+```
 # Project Summary
 
 ## Introduction
